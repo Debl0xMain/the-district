@@ -26,7 +26,7 @@ $revealcount = 0;
 do {
 
     if ($row == 0) {
-        echo '<div class="row my-2">';
+        echo '<div class="row my-2 mx-5 text-center row-cols-3">';
         $row++;
     }
 
@@ -62,6 +62,13 @@ do {
     }
 
 }while($selectcategorie<$nbrcategorie);
+
+
+
+        
+
+
+
 
 
 ?>

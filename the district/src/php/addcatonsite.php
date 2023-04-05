@@ -12,10 +12,12 @@ if ($row == 3) {
 
 
 
-echo '  <div class="col '.$reveal.'">
+echo ' <div class="col '.$reveal.' boxsize">
             <div class="boxcat">
-                <img class="catbackground" src="/src/img/category/'.$image.'" alt=" '.$libelle.' title="'.$libelle.'" " height="255px" width="255px">
+                <a class="animcategory" href="#">
+                <img class="catbackground" src="/src/img/category/'.$image.'" alt=" '.$libelle.' title="'.$libelle.'">
                 <p class="catname mx-auto">'.$libelle.'</p>
+                </a>
             </div>
         </div>'
 
