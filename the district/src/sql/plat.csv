@@ -1,64 +1,3 @@
-
--- Base de données : `the_district`
---
-
-
---
--- Structure de la table `categorie`
---
-
-CREATE TABLE `categorie` (
-  `id` int AUTO_INCREMENT PRIMARY KEY ,
-  `libelle` varchar(100) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `active` varchar(10) NOT NULL
-) ;
-
-
-
---
--- Structure de la table `plat`
---
-
-CREATE TABLE `plat` (
-  `id` int AUTO_INCREMENT PRIMARY KEY,
-  `libelle` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `prix` decimal(10,2) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `id_categorie` int NOT NULL REFERENCES categorie(id),
-  `active` varchar(10) NOT NULL
-) ;
-
-
---
--- Structure de la table `commande`
---
-
-CREATE TABLE `commande` (
-                            `id` int AUTO_INCREMENT PRIMARY KEY,
-                            `id_plat` int NOT NULL REFERENCES plat(id),
-                            `quantite` int NOT NULL,
-                            `total` decimal(10,2) NOT NULL,
-                            `date_commande` datetime NOT NULL,
-                            `etat` varchar(50) NOT NULL,
-                            `nom_client` varchar(150) NOT NULL,
-                            `telephone_client` varchar(20) NOT NULL,
-                            `email_client` varchar(150) NOT NULL,
-                            `adresse_client` varchar(255) NOT NULL
-) ;
-
---
--- Structure de la table `utilisateur`
---
-
-CREATE TABLE `utilisateur` (
-  `id` int AUTO_INCREMENT PRIMARY KEY,
-  `nom_prenom` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ;
-
 INSERT into plat (id,libelle,description,prix,image,id_categorie,active)
 VALUES ("4","District Burger","Burger composé d’un bun’s du boulanger, deux steaks de 80g (origine française), de deux tranches poitrine de porc fumée, de deux tranches cheddar affiné, salade et oignons confits. .","8.00","hamburger.jpg","5","Yes"),
 ("5","Pizza Bianca","Une pizza fine et croustillante garnie de crème mascarpone légèrement citronnée et de tranches de saumon fumé, le tout relevé de baies roses et de basilic frais.","14.00","pizza-salmon.png","4","Yes"),
@@ -76,6 +15,3 @@ VALUES ("4","District Burger","Burger composé d’un bun’s du boulanger, deux
 
 ","12.00","tagliatelles_saumon.webp
 ","10","Yes")
-
-
-
