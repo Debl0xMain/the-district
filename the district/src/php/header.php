@@ -9,16 +9,16 @@ echo '<header class="container">
                 <ul class="navbar-nav">
                     <img class="navlogo" src="./src/img/logo/logo.png" alt="Logo The District">
                 <li class="nav-item mx-3 pt-3">
-                    <a class="nav-link navtext" href="./index.php">Accueil</a>
+                    <a class="nav-link reveal-top navtext" href="./index.php">Accueil</a>
                 </li>
                 <li class="nav-item mx-3 pt-3">
-                    <a class="nav-link navtext" href="./categorie.php">Categorie</a>
+                    <a class="nav-link reveal-top navtext" href="./categorie.php">Categorie</a>
                 </li>
                 <li class="nav-item mx-3 pt-3">
-                    <a class="nav-link navtext" href="./plats.php">Plats</a>
+                    <a class="nav-link  reveal-top navtext" href="./plats.php">Plats</a>
                 </li>
                 <li class="nav-item mx-3 pt-3">
-                    <a class="nav-link navtext" href="./contact.php">Contact</a>
+                    <a class="nav-link reveal-top navtext" href="./contact.php">Contact</a>
                 </li>
                 <img class="navlogo" src="./src/img/logo/logo.png" alt="Logo The District">
                 </ul>

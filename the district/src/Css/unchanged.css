@@ -76,6 +76,58 @@
     color: rgba(255, 0, 0, 0) !important;
     background-color: rgba(255, 0, 0, 0);
 }
+@keyframes revealAnimationtop {
+    0% {
+    opacity: 0;
+    transform: translateY(-30px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0px);
+    }
+}
+.reveal-top {
+    animation: revealAnimationtop 3s cubic-bezier(.5, 0, 0, 1) both;
+}
+@keyframes revealAnimationbot {
+    0% {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0px);
+    }
+}
+.reveal-bot {
+    animation: revealAnimationbot 3s cubic-bezier(.5, 0, 0, 1) both;
+}
 
+@keyframes revealAnimationright {
+    0% {
+    opacity: 0;
+    transform: translateX(-30px);
+    }
+    100% {
+    opacity: 1;
+    transform: translatex(0px);
+    }
+}
+.reveal-right {
+    animation: revealAnimationright 3s cubic-bezier(.5, 0, 0, 1) both;
+}
+@keyframes revealAnimationleft {
+    0% {
+    opacity: 0;
+    transform: translateX(30px);
+    }
+    100% {
+    opacity: 1;
+    transform: translatex(0px);
+    }
+}
+.reveal-left {
+    animation: revealAnimationleft 3s cubic-bezier(.5, 0, 0, 1) both;
+}
 
 
