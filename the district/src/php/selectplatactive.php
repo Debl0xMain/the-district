@@ -47,10 +47,12 @@ do {
         $requete->closeCursor();
         foreach ($tableau as $plat);
 
-        $libelle = $plat->libelle;
-        $image = $plat->image;
-        $onoff = $plat->active;
-        $id_categorie = $plat->id;
+        $libelleplat = $plat->libelle;
+        $descplat = $plat->description;
+        $imageplat = $plat->image;
+        $onoffplat = $plat->active;
+        $id_categorieplat = $plat->$id_categorie;
+        $id_plat = $plat->$id_;
 
         
         if ($onoff == "Yes") {
