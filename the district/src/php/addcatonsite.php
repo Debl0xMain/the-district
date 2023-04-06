@@ -9,9 +9,6 @@ if ($row == 3) {
     $reveal = "reveal-right";
 }
 
-
-
-
 echo ' <div class="col '.$reveal.' boxsize">
             <div class="boxcat">
                 <a class="animcategory" href="#">
