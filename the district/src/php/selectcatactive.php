@@ -1,27 +1,10 @@
 <?php
-include('./src/sql/connect.php');
-$db = connexionBase();
-
-$requete = $db->query("SELECT COUNT(*) AS maxint FROM categorie");
-$counttable = $requete->fetchAll(PDO::FETCH_OBJ);
-$requete->closeCursor();
-
-foreach ($counttable as $categorie):
-
-$nbrcategorie = $categorie->maxint;
-endforeach;
-$requete = $db->query("
-    SELECT *
-    FROM categorie
-    order by id DESC
-    LIMIT 0, 1");
-$tableau = $requete->fetchAll(PDO::FETCH_OBJ);
-$requete->closeCursor();
-foreach ($tableau as $affcat):
-endforeach;
 $selectcategorie = 0;
 $row = 0;
 $revealcount = 0;
+
+include_once('./src/sql/connect.php');
+include_once('./src/sql/request.php');
 
 do {
 
@@ -32,14 +15,7 @@ do {
 
     if ($row == 1 || $row == 2 || $row == 3) {
         
-        $requete = $db->query("
-        SELECT *
-        FROM categorie
-        Limit $selectcategorie,1
-        ");
-        $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
-        $requete->closeCursor();
-        foreach ($tableau as $cat);
+        foreach (affcat($selectcategorie) as $cat);
 
         $libelle = $cat->libelle;
         $image = $cat->image;
@@ -61,7 +37,7 @@ do {
         $row = 0;
     }
 
-}while($selectcategorie<$nbrcategorie);
+}while($selectcategorie<countmaxcat());
 
 
 
