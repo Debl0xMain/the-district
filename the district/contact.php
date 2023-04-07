@@ -25,9 +25,6 @@
 include("./src/php/header.php"); 
 ?>
 
-
-
-
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
 <!-- Script -->
