@@ -39,6 +39,8 @@ do {
 
 }while($selectcategorie<countmaxcat());
 
+include_once('selectplatactive.php');
+
 
 
         

@@ -29,6 +29,23 @@ function affcat($selectcategorie) {
     return $tableauaffcat;
 }
 
+function affplat($selectplat) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT plat.libelle , SUM(commande.quantite) as trie3
+    FROM plat
+    JOIN commande on commande.id_plat = plat.id
+    group by plat.libelle
+    order by trie3 DESC
+    LIMIT $selectplat,1
+    ");
+    $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $tableau;
+}
+
 
 
 
