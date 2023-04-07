@@ -22,13 +22,14 @@ echo '<header class="container">
                 </li>
                 <img class="navlogo" src="./src/img/logo/logo.png" alt="Logo The District">
                 </ul>
-            </div>
-            <div class="position-fixed btnlogin">
-                <button type="button" class="btn btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#login">
-                    <i class="fa-solid fa-user"></i>
-                 Login
-                </button>
-            </div>
+            </div>'.
+                //<div class="position-fixed btnlogin">
+                //<button type="button" class="btn btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#login">
+                //<i class="fa-solid fa-user"></i>
+                 //Login
+                //</button>
+                //</div>
+                '
         </div>
     </nav>
 </header>

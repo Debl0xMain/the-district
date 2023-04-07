@@ -5,7 +5,7 @@
 
 /* search bar  */
 .search {
-    margin-top: 120px !important;
+    margin-top: 110px !important;
     margin-bottom: 10px;
 }
 #searchbar {
@@ -39,6 +39,9 @@
     text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
     left: 10px;
     top: -5px;
+    backdrop-filter: blur(2px);
+    border-radius: 50px;
+
 }
 
 .animcategory:hover p {
