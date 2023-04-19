@@ -33,7 +33,7 @@ function affplat($selectplat) {
 
     $db = connexionBase();
     $requete = $db->query("
-    select *
+    SELECT *
     FROM plat
     WHERE plat.id = (SELECT plat.id
                     FROM plat
