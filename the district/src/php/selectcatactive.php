@@ -4,6 +4,7 @@ $revealcount = 0;
 
 include_once('./src/sql/connect.php');
 include_once('./src/sql/request.php');
+include_once('./src/php/class/cat.class.php');
 
 echo '<div class="row my-1 mx-5 text-center row-cols-lg-3">';
 
@@ -11,13 +12,15 @@ do {
 
         foreach (affcat($selectcategorie) as $cat);
 
-        $libelle = $cat->libelle;
-        $image = $cat->image;
-        $onoff = $cat->active;
-        $id_categorie = $cat->id;
+        $libellecat = $cat->libelle;
+        $imagecat = $cat->image;
+        $onoffcat = $cat->active;
+        $id_categoriecat = $cat->id;
 
+        $categorisclass[$selectcategorie] = new _categorie($libellecat, $imagecat, $onoffcat, $id_categoriecat);
+        var_dump($categorisclass);
         
-        if ($onoff == "Yes") {
+        if ($onoffcat == "Yes") {
             include('addcatonsite.php');
         }
 
