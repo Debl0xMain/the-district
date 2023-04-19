@@ -13,6 +13,12 @@ class _categorie
         $this->_id_categorie =  $id_categorie;
     }
 
+    public function affcatonsite($row,$selectcategorie,$imagecat,$libellecat,$categorisclass) {
+        
+        include('./src/php/addcatonsite.php');
+        
+    }
+
 
 }
 ?>

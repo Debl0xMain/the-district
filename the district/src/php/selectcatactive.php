@@ -1,6 +1,7 @@
 <?php
 $selectcategorie = 0;
-$revealcount = 0;
+$reveal = 0;
+$row = 1;
 
 include_once('./src/sql/connect.php');
 include_once('./src/sql/request.php');
@@ -18,14 +19,17 @@ do {
         $id_categoriecat = $cat->id;
 
         $categorisclass[$selectcategorie] = new _categorie($libellecat, $imagecat, $onoffcat, $id_categoriecat);
-        var_dump($categorisclass);
+
         
         if ($onoffcat == "Yes") {
-            include('addcatonsite.php');
+            $categorisclass[$selectcategorie]->affcatonsite($row,$selectcategorie,$imagecat,$libellecat,$categorisclass);
         }
 
         $selectcategorie++;
-
+        if ($row == 3) {
+            $row = 0;
+        }
+        $row++;
 }while($selectcategorie<countmaxcat());
 echo "</div>";
 
