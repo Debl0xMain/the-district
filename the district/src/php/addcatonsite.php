@@ -12,7 +12,7 @@ if ($row == 3) {
 echo ' <div class="col '.$reveal.' boxsize">
             <div class="boxcat">
                 <a class="animcategory" href="#">
-                <img class="catbackground" src="/src/img/category/'.$image.'" alt=" '.$libelle.' title="'.$libelle.'">
+                <img class="catbackground" src="/src/img/category/'.$image.'" alt=" '.$libelle.' title="'.$libelle.'" height="255px" width="255px">
                 <p class="catname mx-auto">'.$libelle.'</p>
                 </a>
             </div>

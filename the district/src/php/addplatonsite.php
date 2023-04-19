@@ -16,6 +16,7 @@ echo ' <div class="col '.$reveal.' boxsize">
                 <img class="catbackground" src="/src/img/food/'.$imageplat.'" alt=" '.$libelleplat.' title="'.$libelleplat.'">
                 <p class="catname mx-auto">'.$libelleplat .'</p>
                 <p class="catname mx-auto">'.$prixplat .'</p>
+                <p class="catname mx-auto">'.$descplat .'</p>
                 </a>
             </div>
         </div>'

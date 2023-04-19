@@ -33,20 +33,23 @@ function affplat($selectplat) {
 
     $db = connexionBase();
     $requete = $db->query("
-    SELECT plat.libelle , SUM(commande.quantite) as trie3
+    select *
     FROM plat
-    JOIN commande on commande.id_plat = plat.id
-    group by plat.libelle
-    order by trie3 DESC
-    LIMIT $selectplat,1
+    WHERE plat.id = (SELECT plat.id
+                    FROM plat
+                    JOIN commande on commande.id_plat = plat.id
+                    order by plat.id=(SELECT plat.id
+                                      FROM plat
+                                      JOIN commande on commande.id_plat = plat.id
+                                      group by plat.id
+                                      order by SUM(commande.quantite) DESC
+                                      LIMIT $selectplat,1) DESC LIMIT 0,1);
     ");
-    $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    $tableauplat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
 
-    return $tableau;
+    return $tableauplat;
 }
-
-
 
 
 ?>
