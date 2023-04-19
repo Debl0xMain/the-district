@@ -33,7 +33,7 @@ include("./src/php/header.php");
 
 <?php include('./src/php/selectcatactive.php'); ?>
 
-<?php include('./src/php/selectplatactive.php'); ?>
+<?php include_once('./src/php/selectplatactive.php'); ?>
 
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
