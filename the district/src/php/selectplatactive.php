@@ -1,34 +1,40 @@
 <?php
 $selectplat = 0;
 $revealcount = 0;
+$rowplat = 1;
+$selectplatactif = 0;
 
 include_once('./src/sql/connect.php');
 include_once('./src/sql/request.php');
+include_once('./src/php/class/plat.class.php');
 
 echo '<div class="row my-2 mx-5 text-center row-cols-3">';
 
 do {
+    
+    foreach (affplat($selectplat) as $plat);
 
-        foreach (affplat($selectplat) as $plat);
+    $libelleplat = $plat->libelle;
+    $imageplat = $plat->image;
+    $onoffplat = $plat->active;
+    $id_categorieplat = $plat->id_categorie;
+    $prixplat = $plat->prix;
+    $descplat = $plat->description;
+    
 
-        $libelleplat = $plat->libelle;
-        $descplat = $plat->description;
-        $imageplat = $plat->image;
-        $prixplat = $plat->prix;
-        $onoffplat = $plat->active;
-        $id_categorieplat = $plat->id_categorie;
-        $id_plat = $plat->id;
+    $platclass[$selectplat] = new _plat($libelleplat, $imageplat, $onoffplat, $id_categorieplat, $prixplat, $descplat);
+    
+    if ($onoffplat == "Yes") {
+        $platclass[$selectplat]->affplatonsite($rowplat, $selectplat, $platclass);
+    }
+    $selectplatactif++;
+    $selectplat++;
+    if ($rowplat == 3) {
+        $rowplat = 0;
+    }
+    $rowplat++;
 
-        
-        if ($onoffplat == "Yes") {
-            echo 'plat active';
-            include('addplatonsite.php');
-            $rowplat++;
-        }
-
-        $selectplat++;
-
-}while($selectplat<3);
+}while($selectplatactif=1);
 
 echo '</div>';
 

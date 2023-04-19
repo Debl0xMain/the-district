@@ -1,22 +1,22 @@
 <?php
 
-if ($row == 1) {
+if ($rowplat == 1) {
     $reveal = "reveal-left";
 }
-if ($row == 2) {
+if ($rowplat == 2) {
     $reveal = "reveal-top";
 }
-if ($row == 3) {
+if ($rowplat == 3) {
     $reveal = "reveal-right";
 }
-
-echo ' <div class="col '.$reveal.' boxsize">
+echo "<h1>sa fonctionne</h1>";
+echo ' <div class="'.$reveal.' boxsize">
             <div class="boxcat">
                 <a class="animcategory" href="#">
-                <img class="catbackground" src="/src/img/food/'.$imageplat.'" alt=" '.$libelleplat.' title="'.$libelleplat.'">
-                <p class="catname mx-auto">'.$libelleplat .'</p>
-                <p class="catname mx-auto">'.$prixplat .'</p>
-                <p class="catname mx-auto">'.$descplat .'</p>
+                <img class="catbackground" src="/src/img/food/'.$platclass[$selectplat]->_image.'" alt=" '.$platclass[$selectplat]->_libelle.' title="'.$platclass[$selectplat]->_libelle.'">
+                <p class="catname mx-auto">'.$platclass[$selectplat]->_libelle .'</p>
+                <p class="catname mx-auto">'.$platclass[$selectplat]->_prixplat .'</p>
+                <p class="catname mx-auto">'.$platclass[$selectplat]->_descplat .'</p>
                 </a>
             </div>
         </div>'

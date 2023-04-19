@@ -22,7 +22,7 @@ do {
 
         
         if ($onoffcat == "Yes") {
-            $categorisclass[$selectcategorie]->affcatonsite($row,$selectcategorie,$imagecat,$libellecat,$categorisclass);
+            $categorisclass[$selectcategorie]->affcatonsite($row,$selectcategorie,$categorisclass);
         }
 
         $selectcategorie++;

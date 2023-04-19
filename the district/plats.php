@@ -24,7 +24,7 @@
 <?php 
 include("./src/php/header.php"); 
 ?>
-
+<?php include('./src/php/selectplatactive.php'); ?>
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
 <!-- Script -->

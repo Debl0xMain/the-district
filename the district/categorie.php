@@ -32,7 +32,8 @@ include("./src/php/header.php");
 </div>
 
 <?php include('./src/php/selectcatactive.php'); ?>
-<?php //include('./src/php/selectplatactive.php'); ?>
+
+<?php include('./src/php/selectplatactive.php'); ?>
 
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
