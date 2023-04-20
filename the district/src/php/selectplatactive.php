@@ -34,7 +34,7 @@ do {
     }
     $rowplat++;
 
-}while($selectplatactif=1);
+}while($selectplatactif==1);
 
 echo '</div>';
 
