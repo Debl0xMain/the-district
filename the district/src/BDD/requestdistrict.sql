@@ -1,11 +1,5 @@
 USE `the_district`;
 
-
-JOIN plat
-ON plat.id_categorie = categorie.id
-JOIN commande
-on command.id_plat = plat.id;
-
 SELECT *
 FROM categorie
 order by id desc;
@@ -18,7 +12,7 @@ order by id desc;
     LIMIT 0,3
 ;
 
-
+"Ecrivez un script sql permettant d'ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie.";
 INSERT into categorie (id,libelle,image,active)
 values ("50","Pizza","pizza_cat.jpg","Yes")
 AND
@@ -26,28 +20,8 @@ AND
 INSERT into plat (id,libelle,description,prix,image,@@IDENTITY,active)
 VALUES ("40","District Burger","Burger","8.00","hamburger.jpg","5","Yes");
 
-    SELECT plat.id, SUM(commande.quantite) as trie3
-    FROM plat
-    JOIN commande on commande.id_plat = plat.id
-    group by plat.id
-    order by trie3 DESC
-    LIMIT 3,1;
 
-    select *
-    FROM plat
-    WHERE id = 5;
-
-    SELECT *
-    from plat;
-
-                SELECT plat.libelle,plat.id as 'id a avoir', SUM(commande.quantite) as trie3
-                FROM plat
-                JOIN commande on commande.id_plat = plat.id
-                group by plat.id
-                order by trie3 DESC
-                LIMIT 2,1;
-
-
+"Liste des plats les plus vendus par ordre décroissant";
         select *
         FROM plat
         WHERE plat.id = (SELECT plat.id
@@ -60,8 +34,19 @@ VALUES ("40","District Burger","Burger","8.00","hamburger.jpg","5","Yes");
                                           order by SUM(commande.quantite) DESC
                                          LIMIT 0,1) DESC LIMIT 0,1);
 
-        SELECT *
-        FROM plat
-        where id = ();
+                                         
 
+"Ecrivez une requête permettant de supprimer les plats non actif de la base de données";
+DELETE from plat where active = "No";
+"Ecrivez une requête permettant de supprimer les commandes avec le statut livré";
+Delete from commande where etat = "Livrée";
+
+"Ecrivez une requête permettant d'augmenter de 10% le prix des plats de la catégorie 'Pizza'";
+Update plat
+set plat.prix = COUNT(plat.prix * 0.1)
+where (select *
+    from plat
+    JOIN categorie
+    ON plat.id_categorie = categorie.id
+    where categorie.libelle = "Pizza" );
 
