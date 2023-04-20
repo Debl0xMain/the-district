@@ -8,6 +8,9 @@ include_once('./src/sql/connect.php');
 include_once('./src/sql/request.php');
 include_once('./src/php/class/plat.class.php');
 
+echo '<div class="row my-2 mx-5 text-center row-cols-1">';
+echo '<div class="col platmv"><p>Notre selection</p></div>';
+echo '</div>';
 echo '<div class="row my-2 mx-5 text-center row-cols-3">';
 
 do {
@@ -37,6 +40,8 @@ do {
 }while($selectplatactif<3);
 
 echo '</div>';
+echo '<div class="row my-2 mx-5 text-center row-cols-3">';
+echo '<div class="col footerecart"></div>';
 
 
         

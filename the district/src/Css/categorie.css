@@ -54,3 +54,53 @@
     width: 255px;
 }
 
+.platname {
+    font-size: 2.5rem;
+    font-family: 'craie';
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
+    left: 10px;
+    top: -15px;
+    backdrop-filter: blur(2px);
+    border-radius: 50px;
+}
+
+.platprix {
+    font-size: 2.5rem;
+    font-family: 'craie';
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
+    left: 10px;
+    top: 50px;
+    backdrop-filter: blur(2px);
+    border-radius: 50px;
+}
+
+.platdesc {
+    font-size: 1.475rem;
+    width: 250px;
+    font-family: 'craie';
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
+    left: 165px;
+    top: 150px;
+    backdrop-filter: blur(2px);
+    border-radius: 50px;
+}
+.footerecart {
+    height: 200px;
+}
+.platmv {
+    font-size: 5rem;
+    font-family: 'craie';
+    z-index: 2;
+    color: white;
+    text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
+    border-radius: 50px;
+}

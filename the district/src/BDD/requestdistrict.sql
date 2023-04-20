@@ -8,8 +8,8 @@ order by id desc;
     FROM plat
     JOIN commande on commande.id_plat = plat.id
     group by plat.libelle
-    order by trie3 DESC
-    LIMIT 0,3
+    order by trie3;
+
 ;
 
 "Ecrivez un script sql permettant d'ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie.";
@@ -43,10 +43,8 @@ Delete from commande where etat = "Livrée";
 
 "Ecrivez une requête permettant d'augmenter de 10% le prix des plats de la catégorie 'Pizza'";
 Update plat
-set plat.prix = COUNT(plat.prix * 0.1)
-where (select *
-    from plat
-    JOIN categorie
-    ON plat.id_categorie = categorie.id
+set plat.prix = plat.prix * 0.1
+where plat.id_categorie = (select categorie.id
+    from categorie
     where categorie.libelle = "Pizza" );
 

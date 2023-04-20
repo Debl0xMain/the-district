@@ -18,7 +18,6 @@ class _plat
     }
 
     public function affplatonsite($rowplat,$selectplat,$platclass) {
-        echo "<h1>selectionne plat actif</h1>";
         include('./src/php/addplatonsite.php');
     }
 
