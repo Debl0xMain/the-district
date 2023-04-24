@@ -10,7 +10,7 @@ if ($rowplat == 3) {
     $reveal = "reveal-right";
 }
 
-echo ' <div class="'.$reveal.' boxsize">
+echo ' <div class="'.$reveal.' mychange boxsize">
             <div class="boxcat">
                 <a class="animcategory" href="#">
                 <img class="catbackground" src="./src/img/plat/'.$platclass[$selectplat]->_imageplat.'" alt=" '.$platclass[$selectplat]->_libelleplat.'" title="'.$platclass[$selectplat]->_libelleplat.'">

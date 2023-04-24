@@ -6,7 +6,9 @@ $row = 1;
 include_once('./src/sql/connect.php');
 include_once('./src/sql/request.php');
 include_once('./src/php/class/cat.class.php');
-
+echo '<div class="row my-2 mx-5 text-center row-cols-1">';
+echo '<div class="col platmv"><p>Nos catégories</p></div>';
+echo '</div>';
 echo '<div class="row my-1 mx-5 text-center row-cols-lg-3">';
 
 do {

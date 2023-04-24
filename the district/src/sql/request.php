@@ -15,6 +15,20 @@ function countmaxcat () {
     return $nbrcategorie;
 }
 
+function countmaxplat () {
+
+    $db = connexionBase();
+    $requete = $db->query("SELECT COUNT(*) AS maxint FROM plat");  
+    $counttable = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    foreach ($counttable as $categorie):
+    $nbrplat = $categorie->maxint;
+    endforeach;
+
+    return $nbrplat;
+}
+
 function affcat($selectcategorie) {
 
     $db = connexionBase();
@@ -44,6 +58,20 @@ function affplat($selectplat) {
                                       group by plat.id
                                       order by SUM(commande.quantite) DESC
                                       LIMIT $selectplat,1) DESC LIMIT 0,1);
+    ");
+    $tableauplat = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $tableauplat;
+}
+
+function affplatsite($selectplat) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT *
+    FROM plat
+    LIMIT $selectplat,1;
     ");
     $tableauplat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
