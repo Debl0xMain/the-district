@@ -75,7 +75,7 @@
     color: white;
     text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
     left: 10px;
-    top: 50px;
+    top: 100px;
     backdrop-filter: blur(2px);
     border-radius: 50px;
 }
@@ -87,7 +87,7 @@
     position: absolute;
     z-index: 2;
     color: white;
-    text-shadow: 4px 0px 4px #9e0e40, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
+    text-shadow: 4px 0px 4px #000000, 0 0 1em #9e0e40 , 0 0 0.2em #ff0059f3;
     left: 165px;
     top: 150px;
     backdrop-filter: blur(2px);
@@ -105,6 +105,6 @@
     border-radius: 50px;
 }
 .mychange{
-    margin-top : 150px !important;
+    margin-top : 190px !important;
     
 }

@@ -55,3 +55,4 @@ where plat.id_categorie = (select categorie.id
 
     select *
     FROM plat;
+    SELECT libelle,description FROM plat;

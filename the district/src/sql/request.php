@@ -108,4 +108,14 @@ function countmaxplatcat($catplat) {
     return $nbrcatplat;
 }
 
+function search($searchplat) {
+
+    $db = connexionBase();
+    $requete = $db->query("SELECT libelle,description FROM plat LIMIT $searchplat,1");  
+    $searchresult = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $searchresult;
+}
+
 ?>

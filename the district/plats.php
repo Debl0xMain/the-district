@@ -26,9 +26,9 @@
 <?php 
 include("./src/php/header.php"); 
 ?>
-<div class="row search justify-content-center">
-    <input type="text" name="" id="searchbar">
-</div>
+<?php 
+include("./src/php/search.php"); 
+?>
 <?php include_once('./src/php/siteplat.php'); ?>
 
 <!-- Footer -->

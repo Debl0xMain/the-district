@@ -27,9 +27,9 @@
 include("./src/php/header.php"); 
 ?>
 
-<div class="row search justify-content-center">
-    <input type="text" name="" id="searchbar">
-</div>
+<?php 
+include("./src/php/search.php"); 
+?>
 
 <?php include('./src/php/selectcatactive.php'); ?>
 
