@@ -117,5 +117,14 @@ function search($searchplat) {
 
     return $searchresult;
 }
+function searchcat($searchcat) {
+
+    $db = connexionBase();
+    $requete = $db->query("SELECT libelle FROM categorie LIMIT $searchcat,1");  
+    $searchresultcat = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $searchresultcat;
+}
 
 ?>

@@ -26,17 +26,35 @@
 <?php
 include("./src/php/header.php"); 
 ?>
-
-<?php 
-include("./src/php/search.php"); 
+<?php
+include("./src/php/searchcat.php"); 
 ?>
 
+<div class="row search justify-content-center">
+    <label for="autocomplete1">Search on site: </label>
+    <input id="autocomplete1">
+</div>
 <?php include('./src/php/selectcatactive.php'); ?>
 
 <?php include_once('./src/php/selectplatactive.php'); ?>
 
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
+<!-- script search -->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+<script>
+    var catnamejs = <?php echo json_encode($libellesearchcat); ?>;
+
+$( "#autocomplete1" ).autocomplete({
+  source: catnamejs 
+});
+</script>
 <!-- Script -->
 <script src="https://kit.fontawesome.com/3fd2d451cc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

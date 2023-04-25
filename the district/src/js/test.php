@@ -17,11 +17,16 @@ do {
 }while($searchplat<countmaxplat());
 
 ?>
-<label for="autocomplete">Select a programming language: </label>
-<input id="autocomplete">
+
+<div class="row search justify-content-center">
+    <label for="autocomplete">Select a programming language: </label>
+    <input id="autocomplete">
+</div>
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 <script>
