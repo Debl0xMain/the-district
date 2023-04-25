@@ -13,17 +13,30 @@
 
     <!-- Logo -->
 
-    <link rel="icon" type="image/png" href="./src/img/logo/favicon.png" />
+    <link rel="icon" type="image/png" href="/src/img/logo/favicon.png" />
 
-    <title>The District - Index</title>
-    <link rel="stylesheet" href="./src/Css/unchanged.css">
+    <title>The District - platcat</title>
+    <link rel="stylesheet" href="./src/Css/categorie.css">
+    <link rel="stylesheet" href="/src/Css/unchanged.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 </head>
-<body>
+<body class="container">
 <!-- header : Navbar - background - login -->
 <?php 
-include("./src/php/header.php"); 
+include("./src/php/header.php");
 ?>
+<div class="row search justify-content-center">
+    <input type="text" name="" id="searchbar">
+</div>
+<?php
+$catplat = $_POST["cat"];
+include('./src/sql/request');
+include('./src/php/selectactiveplatcat.php');
+?>
+
+
+
+
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
 <!-- Script -->

@@ -79,5 +79,33 @@ function affplatsite($selectplat) {
     return $tableauplat;
 }
 
+function affplatcat($selectplat,$catplat) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT *
+    FROM plat
+    WHERE id_categorie = $catplat
+    LIMIT $selectplat,1
+    ");
+    $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $tableauplatcat;
+}
+
+function countmaxplatcat($catplat) {
+
+    $db = connexionBase();
+    $requete = $db->query("SELECT COUNT(*) AS maxint FROM plat WHERE id_categorie = $catplat");  
+    $counttable = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    foreach ($counttable as $categorie):
+    $nbrcatplat = $categorie->maxint;
+    endforeach;
+
+    return $nbrcatplat;
+}
 
 ?>

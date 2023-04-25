@@ -48,3 +48,10 @@ where plat.id_categorie = (select categorie.id
     from categorie
     where categorie.libelle = "Pizza" );
 
+    SELECT *
+    FROM plat
+    WHERE id_categorie = 5
+    LIMIT 0,1;
+
+    select *
+    FROM plat;

@@ -11,13 +11,17 @@ if ($row == 3) {
 }
 
 echo ' <div class="col '.$reveal.' boxsize">
+
+<form action="platcat.php" method="POST">
+<button type="submit" class="animcategory btn">
+
             <div class="boxcat">
-                <a class="animcategory" href="#">
                 <img class="catbackground" src="/src/img/category/'.$categorisclass[$selectcategorie]->_image.'" alt=" '.$categorisclass[$selectcategorie]->_libelle.' "title="'.$categorisclass[$selectcategorie]->_libelle.'" height="255px" width="255px">
                 <p class="catname mx-auto">'.$categorisclass[$selectcategorie]->_libelle.'</p>
-                </a>
+                <input type="hidden" value="'.$categorisclass[$selectcategorie]->_id_categorie.'" name="cat">
             </div>
+</button>
+</form>
         </div>'
-
 
 ?>

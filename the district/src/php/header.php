@@ -3,11 +3,11 @@ echo '<header class="container">
     <nav class="navbar navbar-expand-sm justify-content-center fixed-top bg-nav">
         <div class="">
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#n_bar" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon my-5"><img class="logomin" src="./src/img/logo/logo1.png" alt="logomin"></span>
+                <span class="navbar-toggler-icon my-5"><img class="logomin" src="/src/img/logo/logo1.png" alt="logomin"></span>
             </button>
             <div class="collapse navbar-collapse text-center text-align-center" id="n_bar">
                 <ul class="navbar-nav">
-                    <img class="navlogo" src="./src/img/logo/logo.png" alt="Logo The District">
+                    <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 <li class="nav-item mx-3 pt-3">
                     <a class="nav-link reveal-top navtext" href="./index.php">Accueil</a>
                 </li>
@@ -20,7 +20,7 @@ echo '<header class="container">
                 <li class="nav-item mx-3 pt-3">
                     <a class="nav-link reveal-top navtext" href="./contact.php">Contact</a>
                 </li>
-                <img class="navlogo" src="./src/img/logo/logo.png" alt="Logo The District">
+                <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 </ul>
             </div>'.
                 //<div class="position-fixed btnlogin">
@@ -34,7 +34,7 @@ echo '<header class="container">
     </nav>
 </header>
 
-<div class="background"><img class="background" src="./src/img/background/background.jpg" alt=""></div>
+<div class="background"><img class="background" src="/src/img/background/background.jpg" alt=""></div>
 
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
