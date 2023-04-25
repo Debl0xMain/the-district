@@ -29,7 +29,7 @@ do {
     
     if ($onoffplat == "Yes") {
         $platclass[$selectplat]->affplatonsite($rowplat, $selectplat, $platclass);
-    }
+    } 
     $selectplatactif++;
     $selectplat++;
     if ($rowplat == 3) {

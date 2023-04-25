@@ -16,6 +16,7 @@ class _categorie
     public function affcatonsite($row,$selectcategorie,$categorisclass) {
         include('./src/php/addcatonsite.php');
     }
+    
 
 
 }
