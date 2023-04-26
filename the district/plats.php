@@ -26,13 +26,14 @@
 <?php 
 include("./src/php/header.php"); 
 ?>
+
 <div class='row my-5'>
   <form action="./search.php" method='POST'>
-    <div class="input-group">
-      <div class="row search justify-content-center mx-auto searchdiv">
-        <label for="autocomplete1">Search on site: </label>
-        <input id="autocomplete1" name='resultsearch'>
+    <div class="input-group searchdiv">
+      <div class="row search mx-auto">
+        <label for="autocomplete1 labelsearch">Search on site </label>
       <div class="input-group-append">
+      <input id="autocomplete1" name='resultsearch'>
       <button class="btn btn-outline-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </div>

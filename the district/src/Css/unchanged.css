@@ -133,9 +133,20 @@
 .searchdiv input {
     border-radius: 50px !important;
     width: 300px;
+    justify-content: end;
+    box-shadow: 3px 2px 2px #ce1053;
+    margin-left: 250px;
 }
-.searchdiv label{
-    color :#ce1053 !important;
-    text-align: center;
 
+.searchdiv button {
+    border-radius: 50px !important;
+    justify-content: end;
+}
+
+.searchdiv label{
+    color: white !important;
+    text-shadow: 2px 2px 2px #ce1053;
+    font-family: "yellowginger";
+    font-size: 1.450rem;
+    text-align: center;
 }

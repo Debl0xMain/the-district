@@ -27,6 +27,22 @@ include("./src/php/header.php");
 ?>
 
 <?php
+include("./src/php/searchcat.php"); 
+?>
+<div class='row my-5'>
+  <form action="./search.php" method='POST'>
+    <div class="input-group searchdiv">
+      <div class="row search mx-auto">
+        <label for="autocomplete1 labelsearch">Search on site </label>
+      <div class="input-group-append">
+      <input id="autocomplete1" name='resultsearch'>
+      <button class="btn btn-outline-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<?php
 include('./src/php/search.php')
 ?>
 

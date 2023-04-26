@@ -17,13 +17,29 @@
 
     <title>The District - Index</title>
     <link rel="stylesheet" href="./src/Css/unchanged.css">
+    <link rel="stylesheet" href="./src/Css/categorie.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
 </head>
-<body>
+<body class="container">
 <!-- header : Navbar - background - login -->
 <?php 
 include("./src/php/header.php"); 
 ?>
+<?php
+include("./src/php/searchcat.php"); 
+?>
+<div class='row my-5'>
+  <form action="./search.php" method='POST'>
+    <div class="input-group searchdiv">
+      <div class="row search mx-auto">
+        <label for="autocomplete1 labelsearch">Search on site </label>
+      <div class="input-group-append">
+      <input id="autocomplete1" name='resultsearch'>
+      <button class="btn btn-outline-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </form>
+</div>
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
 <!-- Script -->
