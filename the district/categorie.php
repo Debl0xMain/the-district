@@ -31,8 +31,8 @@ include("./src/php/searchcat.php");
 ?>
 <form action="./search.php" method='POST'>
   <div class="row search justify-content-center">
-    <label for="autocomplete1">Search on site: </label>
-    <input id="autocomplete1" name='resultsearch'>
+    <label for="autocomplete1 searchbartext">Search on site: </label>
+    <input id="autocomplete1 searchbar" name='resultsearch'>
   </div>
 </form>
 <?php include('./src/php/selectcatactive.php'); ?>

@@ -130,4 +130,12 @@
     animation: revealAnimationleft 3s cubic-bezier(.5, 0, 0, 1) both;
 }
 
+.searchdiv input {
+    border-radius: 50px !important;
+    width: 300px;
+}
+.searchdiv label{
+    color :#ce1053 !important;
+    text-align: center;
 
+}
