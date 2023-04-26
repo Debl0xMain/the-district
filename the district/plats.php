@@ -27,13 +27,14 @@
 include("./src/php/header.php"); 
 ?>
 <?php
-include("./src/php/searchplat.php"); 
+include("./src/php/searchcat.php"); 
 ?>
-
-<div class="row search justify-content-center">
-    <label for="autocomplete">Search on site: </label>
-    <input id="autocomplete">
-</div>
+<form action="./search.php" method='POST'>
+  <div class="row search justify-content-center">
+    <label for="autocomplete1">Search on site: </label>
+    <input id="autocomplete1" name='resultsearch'>
+  </div>
+</form>
 <?php include_once('./src/php/siteplat.php'); ?>
 
 <!-- Footer -->

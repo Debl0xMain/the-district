@@ -56,3 +56,8 @@ where plat.id_categorie = (select categorie.id
     select *
     FROM plat;
     SELECT libelle,description FROM plat;
+
+
+    SELECT *
+    FROM plat
+    WHERE libelle like '%Pizza%' ;

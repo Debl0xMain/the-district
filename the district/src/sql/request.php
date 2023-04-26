@@ -126,5 +126,66 @@ function searchcat($searchcat) {
 
     return $searchresultcat;
 }
+function affplatsearch($selectplat,$search) {
 
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT *
+    FROM plat
+    WHERE libelle like '%$search%' 
+    LIMIT $selectplat,1
+    ");
+    $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $tableauplatcat;
+}
+function countaffplatsearch($search) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT count(*) as maxint
+    FROM plat
+    WHERE libelle like '%$search%' 
+    ");
+    $tableauplatcatcount = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    foreach ($tableauplatcatcount as $count):
+        $ncountplat = $count->maxint;
+        endforeach;
+
+    return $ncountplat;
+}
+function affcatsearch($selectcategorie,$search) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT *
+    FROM categorie
+    WHERE libelle like '%$search%' 
+    LIMIT $selectcategorie,1
+    ");
+    $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $tableauplatcat;
+}
+function countaffcatsearch($search) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT count(*) as maxint
+    FROM categorie
+    WHERE libelle like '%$search%' 
+    ");
+    $tableauplatcatcount = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    foreach ($tableauplatcatcount as $count):
+        $ncountplat = $count->maxint;
+        endforeach;
+
+    return $ncountplat;
+}
 ?>
