@@ -35,6 +35,7 @@ include("./src/php/header.php");
       <div class="input-group-append">
       <input id="autocomplete1" name='resultsearch'>
       <button class="btn btn-outline-danger" id='searchbtn' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <p id="msgerreur"></p>
       </div>
     </div>
   </form>

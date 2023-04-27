@@ -2,21 +2,31 @@
 
 const checksearch = (e) => {
 
-    var search = document.getElementById('autocomplete1').value;
+    var searchentry = document.getElementById('autocomplete1').value;
+    var search = searchentry.trim()
 
-    if (search == catnamejs ) {
-        alert('Cat trouve')
-    }
-    if (search == platnamejs ) {
-        alert('plat trouve')
+    $("#msgemail").html("<br>");
+
+    var push = searchbarjs.includes(search);
+
+
+    if (push === true) {
+        
     }
 
-    for(var i=0; i<array.length; i++) {
-        if(search === array[i]) {
-            console.log('Element Found');
+    if (push === false) {
+
+        e.preventDefault();
+        $("#msgerreur").html(search + " n'est pas disponible pour le moment");
+
+        if (search == "" || search === null) {
+
+            e.preventDefault();
+            $("#msgerreur").html("La saisie n'est pas valide");
+            
         }
     }
-    e.preventDefault();
+
 }
 
 document.getElementById("searchbtn").addEventListener("click", checksearch);

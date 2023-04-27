@@ -150,3 +150,8 @@
     font-size: 1.450rem;
     text-align: center;
 }
+
+#msgerreur {
+    color: red;
+    text-align: center;
+}
