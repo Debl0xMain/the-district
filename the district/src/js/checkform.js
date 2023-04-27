@@ -4,13 +4,19 @@ const checksearch = (e) => {
 
     var search = document.getElementById('autocomplete1').value;
 
-    if (search != catnamejs ) {
-        e.preventDefault();
+    if (search == catnamejs ) {
+        alert('Cat trouve')
     }
-    if (search != platnamejs ) {
-        e.preventDefault();
+    if (search == platnamejs ) {
+        alert('plat trouve')
     }
-    alert(search);
+
+    for(var i=0; i<array.length; i++) {
+        if(search === array[i]) {
+            console.log('Element Found');
+        }
+    }
+    e.preventDefault();
 }
 
 document.getElementById("searchbtn").addEventListener("click", checksearch);

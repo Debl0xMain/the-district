@@ -62,9 +62,9 @@ include("./src/php/searchcat.php");
 <script>
     var catnamejs = <?php echo json_encode($libellesearchcat); ?>;
     var platnamejs = <?php echo json_encode($libellesearchplat); ?>;
-
+    var searchbarjs = platnamejs.concat(catnamejs);
 $( "#autocomplete1" ).autocomplete({
-  source: catnamejs
+  source: searchbarjs
 });
 </script>
 <script src='./src/js/checkform.js'></script>

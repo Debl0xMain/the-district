@@ -55,15 +55,15 @@ include("./src/php/searchcat.php");
 
 
 
-<script>
+  <script>
     var catnamejs = <?php echo json_encode($libellesearchcat); ?>;
     var platnamejs = <?php echo json_encode($libellesearchplat); ?>;
-    <?php echo $libellesearchplat; ?>
-
+    var searchbarjs = platnamejs.concat(catnamejs);
 $( "#autocomplete1" ).autocomplete({
-  source: catnamejs
+  source: searchbarjs
 });
 </script>
+<script src='./src/js/checkform.js'></script>
 <!-- Script -->
 <script src="https://kit.fontawesome.com/3fd2d451cc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
