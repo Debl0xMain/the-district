@@ -29,19 +29,9 @@ include("./src/php/header.php");
 <?php
 include("./src/php/searchcat.php"); 
 ?>
-<div class='row my-5'>
-  <form action="./search.php" method='POST'>
-    <div class="input-group searchdiv">
-      <div class="row search mx-auto">
-        <label for="autocomplete">Search on site </label>
-      <div class="input-group-append">
-      <input id="autocomplete1" name='resultsearch'>
-      <button class="btn btn-outline-danger" id='searchbtn' type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <p id="msgerreur"></p>
-      </div>
-    </div>
-  </form>
-</div>
+<?php
+include_once("./src/php/searchbarwork.php");
+?>
 
 <?php
 include('./src/php/search.php')
@@ -52,23 +42,6 @@ include('./src/php/search.php')
 
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
-<!-- script search -->
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-
-  <script>
-    var catnamejs = <?php echo json_encode($libellesearchcat); ?>;
-    var platnamejs = <?php echo json_encode($libellesearchplat); ?>;
-    var searchbarjs = platnamejs.concat(catnamejs);
-$( "#autocomplete1" ).autocomplete({
-  source: searchbarjs
-});
-</script>
-<script src='./src/js/checkform.js'></script>
 <!-- Script -->
 <script src="https://kit.fontawesome.com/3fd2d451cc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

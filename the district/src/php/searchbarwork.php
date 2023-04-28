@@ -1,5 +1,5 @@
 <div class='row my-5'>
-<form action="" method='POST'>
+<form action="/search.php" method='POST'>
     <div class="input-group searchdiv">
       <div class="row search mx-auto">
         <label for="autocomplete">Search on site </label>
@@ -55,8 +55,8 @@ const checksearch = (e) => {
 
         if (valuesearch === true) {
 
-          $("#msgerreur").html("plat trouvé");
-          e.preventDefault();
+          $("#msgerreur").html("resultat de la recherche");
+          
 
         }
 
