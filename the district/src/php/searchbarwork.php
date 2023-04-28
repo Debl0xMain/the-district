@@ -4,7 +4,7 @@
       <div class="row search mx-auto">
         <label for="autocomplete">Search on site </label>
       <div class="input-group-append">
-      <input id="autocomplete1" name='resultsearch'>
+      <input id="autocomplete1" name='resultsearch' onkeypress="verifierCaracteres(event); return false;">
       <button class="btn btn-outline-danger" id='searchbtn' type="submit">SEND</button>
       <p id="msgerreur"></p>
       </div>
@@ -27,7 +27,32 @@ $( "#autocomplete1" ).autocomplete({
 });
 </script>
 <script>
-  
+  document.getElementById('autocomplete1').addEventListener('keydown',
+function (foo)
+{
+    if (foo.keyCode == 86) // Code clé du copier/coller
+    {
+      $("#msgerreur").html("Le collage de texte n\'est pas autorisé !");
+      foo.preventDefault();
+    }
+ })
+
+  function verifierCaracteres(event) {
+	 		
+       var keyCode = event.which ? event.which : event.keyCode;
+       var touche = String.fromCharCode(keyCode);
+           
+       var champ = document.getElementById('autocomplete1');
+           
+       var caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+           
+       if(caracteres.indexOf(touche) >= 0) {
+         champ.value += touche;
+       }
+           
+     }
+      const Checknoinject = new RegExp("[a-zA-Z]*","g");;
+
     var searchentry = document.getElementById('autocomplete1').value;
     var search = searchentry.trim();
 
@@ -38,39 +63,41 @@ $( "#autocomplete1" ).autocomplete({
     }
     
 const checksearch = (e) => {
-
+    
     var searchentry = document.getElementById('autocomplete1').value;
     var search = searchentry.trim();
     var searchintable = filtreTexte(searchbarjs,search);
 
     $("#msgemail").html("<br>");
-
+    if (Checknoinject.test(search) === false) {
+      $("#msgerreur").html("les caractere speciaux ne sont pas acepte");
+          e.preventDefault();
+    }
+    if (Checknoinject.test(search) === true) {
         if (search.length < 3) {
           $("#msgerreur").html("Minimun de 3 caractere");
           e.preventDefault();
         }
         if (search.length >= 3) {
 
-          valuesearch = compare(searchintable,searchbarjs);
+              valuesearch = compare(searchintable,searchbarjs);
 
-        if (valuesearch === true) {
+              if (valuesearch === true) {
+                $("#msgerreur").html("resultat de la recherche");
+              }
 
-          $("#msgerreur").html("resultat de la recherche");
-          
+              if (valuesearch === false) {
+                  e.preventDefault();
+                  $("#msgerreur").html(search + " n'est pas disponible pour le moment");
 
-        }
-
-        if (valuesearch === false) {
-
-            e.preventDefault();
-            $("#msgerreur").html(search + " n'est pas disponible pour le moment");
-            if (search == "" || search === null) {
-                e.preventDefault();
-                $("#msgerreur").html("La saisie n'est pas valide");  
-            }
-        }
+                  if (search == "" || search === null) {
+                      e.preventDefault();
+                      $("#msgerreur").html("La saisie n'est pas valide");  
+                  }
+              }
 
         }
+      }
 
 }
 
