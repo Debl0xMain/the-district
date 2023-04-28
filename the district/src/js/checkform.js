@@ -3,7 +3,8 @@
 const checksearch = (e) => {
 
     var searchentry = document.getElementById('autocomplete1').value;
-    var search = searchentry.trim()
+    var search = searchentry.trim();
+
 
     $("#msgemail").html("<br>");
 
