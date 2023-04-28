@@ -4,7 +4,7 @@
       <div class="row search mx-auto">
         <label for="autocomplete">Search on site </label>
       <div class="input-group-append">
-      <input id="autocomplete1" name='resultsearch' onkeypress="verifierCaracteres(event); return false;">
+      <input id="autocomplete1" name='resultsearch' onkeypress="verifierCaracteres(event); return false;" required pattern="^[A-Za-z '-]+$" maxlength="8">
       <button class="btn btn-outline-danger" id='searchbtn' type="submit">SEND</button>
       <p id="msgerreur"></p>
       </div>

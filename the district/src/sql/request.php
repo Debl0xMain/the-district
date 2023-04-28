@@ -158,6 +158,7 @@ function countaffplatsearch($search) {
     return $ncountplat;
 }
 function affcatsearch($selectcategorie,$search) {
+    /*
 
     $db = connexionBase();
     $requete = $db->query("
@@ -168,9 +169,18 @@ function affcatsearch($selectcategorie,$search) {
     ");
     $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
+    */
 
+    $db = connexionBase();
+
+    $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like :search_libelle LIMIT $selectcategorie,1 ");
+    $stmt->bindParam(':search_libelle', $search, PDO::PARAM_STR);
+    $stmt->execute();
+    $tableauplatcat = $stmt->fetchAll();
+    $stmt->closeCursor();
     return $tableauplatcat;
 }
+
 function countaffcatsearch($search) {
 
     $db = connexionBase();
