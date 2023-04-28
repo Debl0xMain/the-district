@@ -37,20 +37,21 @@ $( "#autocomplete1" ).autocomplete({
     })
     }
     
-
-    
 const checksearch = (e) => {
 
     var searchentry = document.getElementById('autocomplete1').value;
     var search = searchentry.trim();
     var searchintable = filtreTexte(searchbarjs,search);
 
-
-    console.log(searchentry)
-
     $("#msgemail").html("<br>");
-       
-       valuesearch = compare(searchintable,searchbarjs);
+
+        if (search.length < 3) {
+          $("#msgerreur").html("Minimun de 3 caractere");
+          e.preventDefault();
+        }
+        if (search.length >= 3) {
+
+          valuesearch = compare(searchintable,searchbarjs);
 
         if (valuesearch === true) {
 
@@ -67,6 +68,8 @@ const checksearch = (e) => {
                 e.preventDefault();
                 $("#msgerreur").html("La saisie n'est pas valide");  
             }
+        }
+
         }
 
 }
@@ -104,9 +107,5 @@ function compare(searchintable,searchbarjs)
             };
             
 document.getElementById("searchbtn").addEventListener("click", checksearch);
-
-
-
-
 
 </script>
