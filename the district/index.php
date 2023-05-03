@@ -10,6 +10,8 @@
     <meta name="title" content="The District" />
 	<meta name="description" content= "Restaurant The District" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="#3c790a" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark light">
 
     <!-- Logo -->
 
@@ -22,6 +24,7 @@
 </head>
 <body class="container">
 <!-- header : Navbar - background - login -->
+  
 <?php 
 include("./src/php/header.php"); 
 ?>

@@ -41,6 +41,8 @@
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-duration: 1.10s;
     border-radius: 50% 20%;
+    transition-duration: 5s, 5s;
+    transition-property: border-radius;
 }
 .catname {
     font-size: 4rem;
