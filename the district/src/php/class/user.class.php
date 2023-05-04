@@ -20,6 +20,7 @@ class _user
     private function __checkemail ($email,$email_clt) {
         if (in_array($email_clt,$email_bdd)){
             echo 'email valide';
+            __checkpassword();
         }
         else {
             echo 'email non valide';
