@@ -17,6 +17,26 @@ class _user
         $this->_imgprofil = $imgprofil;
         $this->_rank = $rank;
     }
+    private function __checkemail ($email,$email_clt) {
+        if (in_array($email_clt,$email_bdd)){
+            echo 'email valide';
+        }
+        else {
+            echo 'email non valide';
+        }
+        
+    }
+    protected function __checkpassword ($password_clt,$password) {
+        if (password_verify($password_clt,$password_bdd) === true) {
+            $login = 'User';
+            echo 'mdp valide';
+            session_start($login);
+            setcookie($login);
+        }
+        else {
+            echo 'mdp non valide';
+        }
+    }
 }
 
 ?>
