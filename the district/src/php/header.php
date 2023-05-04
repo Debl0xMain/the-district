@@ -23,7 +23,7 @@ echo '<header class="container">
                 <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 </ul>
             </div>';
-            include('Login/loginbtn.php');
+            include('login/loginbtn.php');
             echo
                 '
         </div>
@@ -33,5 +33,5 @@ echo '<header class="container">
 <div class="background"><img class="background" src="/src/img/background/background.jpg" alt=""></div>
 
 ';
-include('Login/loginmodal.php');
+include('login/loginmodal.php');
 ?>
