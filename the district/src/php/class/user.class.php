@@ -17,27 +17,42 @@ class _user
         $this->_imgprofil = $imgprofil;
         $this->_rank = $rank;
     }
-    private function __checkemail ($email,$email_clt) {
-        if (in_array($email_clt,$email_bdd)){
-            echo 'email valide';
-            __checkpassword();
-        }
-        else {
-            echo 'email non valide';
-        }
+    
+    public function checklogin ($email_clt,$password_clt,$passcheck,$emailcheck) {
         
-    }
-    protected function __checkpassword ($password_clt,$password) {
-        if (password_verify($password_clt,$password_bdd) === true) {
-            $login = 'User';
-            echo 'mdp valide';
-            session_start($login);
-            setcookie($login);
+        if (($email_clt === $emailcheck)) {
+            //email valide //a passe en in_array(donneRentre,bDD) quand il sera relise a la bdd
+            echo 'email valide' . '<br>';
+            if ($this->checkpassword($password_clt,$passcheck) === true) {
+                //session start
+                //redirection
+                //return true
+                echo 'mot de passe valide'. '<br>';
+            }
+            else {
+                //mot de passe invalide
+                //return fase
+                echo 'mot de passe invalide'. '<br>';
+            }
         }
         else {
-            echo 'mdp non valide';
+            //email invalide
+            //return fase
+            echo 'email invalide'. '<br>';
+        }
+
+    }
+
+    private function checkpassword ($password_clt,$passcheck) {
+    
+        if (password_verify($password_clt,$passcheck) === true) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
+
 }
 
 ?>
