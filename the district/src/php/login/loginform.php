@@ -6,8 +6,6 @@ $email_bdd[0] = 'tesdt@gmail.com';
 $email_bdd[1] = 'test@gmail.com';
 $password_bdd = 'test';
 
-$email_verif = in_array($email_clt,$email_bdd,true);
-
 if (in_array($email_clt,$email_bdd)){
     echo 'email valide';
     if ($password_clt === $password_bdd) {
