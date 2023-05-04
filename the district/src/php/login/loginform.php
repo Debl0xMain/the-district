@@ -17,5 +17,4 @@ $passcheck = $objet->_password;
 
 $objet->checklogin($email_clt,$password_clt,$passcheck,$emailcheck);
 
-
 ?>
