@@ -173,6 +173,26 @@
     display: none;
 }
 
+/* Profil Button btnprofil */
+
+.btnprofil {
+    right: 0;
+}
+
+.btnprofil {
+    border-radius: 25px 15px!important;
+    
+}
+
+.btnprofil:hover .btnprofiltext {
+    display: block;
+}
+
+.profildeco {
+    border-radius: 25px 15px!important;
+}
+
+
 /*login modal */
 .loginmodal {
     border-radius: 20px !important;

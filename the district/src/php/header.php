@@ -23,6 +23,8 @@ echo '<header class="container">
                 <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 </ul>
             </div>';
+            //if (session start = on) {include('login/profile.php');}
+            //if (session start = off) {include('login/loginbtn.php');}
             include('login/loginbtn.php');
             echo
                 '
