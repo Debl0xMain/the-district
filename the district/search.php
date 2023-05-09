@@ -15,7 +15,7 @@
 
     <link rel="icon" type="image/png" href="/src/img/logo/favicon.png" />
 
-    <title>The District - <?php $catplat = $_POST["cat"]; echo $catplat; ?> </title>
+    <title>The District - recherche </title>
     <link rel="stylesheet" href="./src/Css/categorie.css">
     <link rel="stylesheet" href="/src/Css/unchanged.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 

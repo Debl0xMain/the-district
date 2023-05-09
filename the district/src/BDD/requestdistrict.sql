@@ -61,3 +61,7 @@ where plat.id_categorie = (select categorie.id
     SELECT *
     FROM plat
     WHERE libelle like '%Pizza%' ;
+
+    select email
+    from utilisateur;
+

@@ -158,26 +158,30 @@ function countaffplatsearch($search) {
     return $ncountplat;
 }
 function affcatsearch($selectcategorie,$search) {
+    
     /*
-
     $db = connexionBase();
     $requete = $db->query("
     SELECT *
     FROM categorie
     WHERE libelle like '%$search%' 
-    LIMIT $selectcategorie,1
+    LIMIT $selectcategorie,1  
     ");
     $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
-    */
-
+    */ /*
     $db = connexionBase();
-
-    $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like :search_libelle LIMIT $selectcategorie,1 ");
-    $stmt->bindParam(':search_libelle', $search, PDO::PARAM_STR);
+    $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");
+    $stmt->bindValue(':search_libelle', $search, PDO::PARAM_STR);
     $stmt->execute();
-    $tableauplatcat = $stmt->fetchAll();
+    $tableauplatcat = $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();
+*/
+
+    $requete = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");
+    $requete->execute(":search_libelle",$search);
+    $tableauplatcat = $requete->fetch(PDO::FETCH_OBJ);
+
     return $tableauplatcat;
 }
 
@@ -197,5 +201,21 @@ function countaffcatsearch($search) {
         endforeach;
 
     return $ncountplat;
+}
+
+function loginemail () {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    select email
+    from utilisateur;
+    ");
+    $email_bdd = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+    return $email_bdd
+    ;
+
+
+
 }
 ?>
