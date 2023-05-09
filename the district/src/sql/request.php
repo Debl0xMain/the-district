@@ -168,19 +168,23 @@ function affcatsearch($selectcategorie,$search) {
     LIMIT $selectcategorie,1  
     ");
     $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
-    $requete->closeCursor();
-    */ /*
+    $requete->closeCursor();*/
+     
+    /*
     $db = connexionBase();
     $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");
     $stmt->bindValue(':search_libelle', $search, PDO::PARAM_STR);
     $stmt->execute();
     $tableauplatcat = $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();
+
 */
 
-    $requete = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");
-    $requete->execute(":search_libelle",$search);
-    $tableauplatcat = $requete->fetch(PDO::FETCH_OBJ);
+
+
+
+
+
 
     return $tableauplatcat;
 }
