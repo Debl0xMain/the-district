@@ -15,6 +15,7 @@ echo
                 <input name="mail" type="email">
                 <p class="mt-3">Password</p><i class="fa-solid fa-lock"></i>
                 <input name="password" type="password">
+                <p class="passinv"> <br> </p>
             </div>
         </div>
     <div class="modal-footer">

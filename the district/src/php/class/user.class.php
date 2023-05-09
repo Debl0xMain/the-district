@@ -31,14 +31,14 @@ class _user
             }
             else {
                 //mot de passe invalide
+                echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`; //passinv
                 //return fase
-                echo 'mot de passe invalide'. '<br>';
             }
         }
         else {
             //email invalide
             //return fase
-            echo 'email invalide'. '<br>';
+            echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`;
         }
 
     }
