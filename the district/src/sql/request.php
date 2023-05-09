@@ -169,7 +169,7 @@ function affcatsearch($selectcategorie,$search) {
     ");
     $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();*/
-     
+    
     /*
     $db = connexionBase();
     $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");

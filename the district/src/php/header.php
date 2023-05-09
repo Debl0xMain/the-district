@@ -25,7 +25,8 @@ echo '<header class="container">
             </div>';
             //if (session start = on) {include('login/profile.php');}
             //if (session start = off) {include('login/loginbtn.php');}
-            include('login/loginbtn.php');
+            //include('login/loginbtn.php');
+            //include('login/profile.php');
             echo
                 '
         </div>
