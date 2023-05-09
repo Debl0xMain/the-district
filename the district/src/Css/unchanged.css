@@ -198,7 +198,7 @@
     border-radius: 20px !important;
     box-shadow: 4px 4px 4px black;
 }
-
+/* Bug transition ne lance a chaque on click
 .fade2 {
     transform: scale(0.1);
     opacity: 0;
@@ -211,3 +211,4 @@
     opacity: 1;
     transform: scale(1);
 }
+*/
