@@ -4,7 +4,7 @@ class _user
 {
     public $_name;
     public $_email;
-    public $_password;
+    private $_password;
     public $_imgprofil;
     public $_rank;
 
@@ -16,7 +16,7 @@ class _user
         $this->_rank = $rank;
     }
     
-    public function checklogin ($email_clt,$password_clt,$passcheck,$emailcheck) {
+    public function checklogin ($email_clt,$password_clt) {
         
         if ((in_array($email_clt,$emailcheck))) {
             //email valide //a passe en in_array(donneRentre,bDD) quand il sera relise a la bdd |||||| $emailcheck = loginemail(); in_array($email_clt,$emailcheck);

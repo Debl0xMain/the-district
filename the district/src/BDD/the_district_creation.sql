@@ -56,8 +56,12 @@ CREATE TABLE `utilisateur` (
   `id` int AUTO_INCREMENT PRIMARY KEY,
   `nom_prenom` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `imgprofil` varchar(255) NOT NULL
 ) ;
+
+INSERT into utilisateur (id,nom_prenom,email,password,imgprofil)
+Values ("1","test admin","admin@admin.fr","$2y$10$5b2VABbvBvfmne20p1E.nOOJ85qwk9bYiOrxxbb74d7M.M21Yx5K6","admin");
 
 INSERT into plat (id,libelle,description,prix,image,id_categorie,active)
 VALUES ("4","District Burger","Burger composé d’un bun’s du boulanger, deux steaks de 80g (origine française), de deux tranches poitrine de porc fumée, de deux tranches cheddar affiné, salade et oignons confits. .","8.00","hamburger.jpg","5","Yes"),

@@ -182,6 +182,26 @@ function countaffcatsearch($search) {
     return $ncountplat;
 }
 
+function creatuser () {
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT *
+    FROM utilisateur
+    ");
+    $utilisateur = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+    $i = 1;
+    foreach ($utilisateur as $us):
+        $i++;
+        $name = $us->nom_prenom;
+        $email = $us->email;
+        $password = $us->password;
+        $imgprofil = $us->imgprofil;
+        $rank = "test";
+        $objet[$i] = new _user($name, $email, $password, $imgprofil, $rank);
+    endforeach;
+
+}
 function loginemail () {
 
     $db = connexionBase();
