@@ -129,15 +129,11 @@ function searchcat($searchcat) {
 function affplatsearch($selectplat,$search) {
 
     $db = connexionBase();
-    $requete = $db->query("
-    SELECT *
-    FROM plat
-    WHERE libelle like '%$search%' 
-    LIMIT $selectplat,1
-    ");
-    $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
-    $requete->closeCursor();
-
+    $stmt = $db->prepare("SELECT * FROM plat WHERE libelle like :search_libelle LIMIT $selectplat,1 ");
+    $stmt->bindValue(':search_libelle',"%".$search."%", PDO::PARAM_STR);
+    $stmt->execute();
+    $tableauplatcat = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $stmt->closeCursor();
     return $tableauplatcat;
 }
 function countaffplatsearch($search) {
@@ -159,33 +155,12 @@ function countaffplatsearch($search) {
 }
 function affcatsearch($selectcategorie,$search) {
     
-    /*
     $db = connexionBase();
-    $requete = $db->query("
-    SELECT *
-    FROM categorie
-    WHERE libelle like '%$search%' 
-    LIMIT $selectcategorie,1  
-    ");
-    $tableauplatcat = $requete->fetchAll(PDO::FETCH_OBJ);
-    $requete->closeCursor();*/
-    
-    /*
-    $db = connexionBase();
-    $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like '%:search_libelle%' LIMIT $selectcategorie,1 ");
-    $stmt->bindValue(':search_libelle', $search, PDO::PARAM_STR);
+    $stmt = $db->prepare("SELECT * FROM categorie WHERE libelle like :search_libelle LIMIT $selectcategorie,1 ");
+    $stmt->bindValue(':search_libelle',"%".$search."%", PDO::PARAM_STR);
     $stmt->execute();
     $tableauplatcat = $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();
-
-*/
-
-
-
-
-
-
-
     return $tableauplatcat;
 }
 
@@ -210,16 +185,23 @@ function countaffcatsearch($search) {
 function loginemail () {
 
     $db = connexionBase();
-    $requete = $db->query("
-    select email
-    from utilisateur;
-    ");
-    $email_bdd = $requete->fetchAll(PDO::FETCH_OBJ);
-    $requete->closeCursor();
-    return $email_bdd
-    ;
+    $stmt = $db->prepare("SELECT email from utilisateur;");
+    $stmt->execute();
+    $email_bdd = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $stmt->closeCursor();
+    return $email_bdd;
+    
+}
 
+function password($email_clt) {
 
-
+    $db = connexionBase();
+    $stmt = $db->prepare("SELECT password from utilisateur where email = :email ;");
+    $stmt->bindValue(':email',$email_clt, PDO::PARAM_STR);
+    $stmt->execute();
+    $password = $stmt->fetchAll(PDO::FETCH_OBJ);
+    $stmt->closeCursor();
+    return $password;
+    
 }
 ?>
