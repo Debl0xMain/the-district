@@ -17,11 +17,12 @@ class _user
     }
     
     public function checklogin ($email_clt,$password_clt) {
-        
-        if ((in_array($email_clt,$emailcheck))) {
+        var_dump(loginemail($email_clt));
+        var_dump($email_clt);
+        if (loginemail($email_clt) == true) {
             //email valide //a passe en in_array(donneRentre,bDD) quand il sera relise a la bdd |||||| $emailcheck = loginemail(); in_array($email_clt,$emailcheck);
             echo 'email valide' . '<br>';
-            if ($this->checkpassword($password_clt,$passcheck,$email_clt ) === true) {
+            if ($this->checkpassword($password_clt,$email_clt) == true) {
                 //session start
                 //redirection
                 //return true
@@ -29,19 +30,21 @@ class _user
             }
             else {
                 //mot de passe invalide
-                echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`; //passinv
+                //echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`; //passinv
                 //return fase
+                echo 'mot de passe invalide'. '<br>';
             }
         }
         else {
             //email invalide
             //return fase
-            echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`;
+            echo 'email invalide'. '<br>';
+            //echo `<script> $("#passinv").html("*l'adresse maim ou le mot de passe est invalide");</script>`;
         }
 
     }
 
-    private function checkpassword ($password_clt,$passcheck,$email_clt) {
+    private function checkpassword ($password_clt,$email_clt) {
     
         if (password_verify($password_clt,password($email_clt)) === true) {
             return true;

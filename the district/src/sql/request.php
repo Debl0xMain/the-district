@@ -190,27 +190,19 @@ function creatuser () {
     ");
     $utilisateur = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
-    $i = 1;
-    foreach ($utilisateur as $us):
-        $i++;
-        $name = $us->nom_prenom;
-        $email = $us->email;
-        $password = $us->password;
-        $imgprofil = $us->imgprofil;
-        $rank = "test";
-        $objet[$i] = new _user($name, $email, $password, $imgprofil, $rank);
-    endforeach;
+
+    return $utilisateur;
 
 }
-function loginemail () {
+function loginemail ($email_clt) {
 
     $db = connexionBase();
-    $stmt = $db->prepare("SELECT email from utilisateur;");
+    $stmt = $db->prepare("SELECT email from utilisateur where email = :email ;");
+    $stmt->bindValue(':email',$email_clt, PDO::PARAM_STR);
     $stmt->execute();
     $email_bdd = $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();
     return $email_bdd;
-    
 }
 
 function password($email_clt) {
@@ -221,7 +213,10 @@ function password($email_clt) {
     $stmt->execute();
     $password = $stmt->fetchAll(PDO::FETCH_OBJ);
     $stmt->closeCursor();
-    return $password;
+    foreach ($password as $pass):
+        $passwordbdd = $pass->password;
+        endforeach;
+    return $passwordbdd ;
     
 }
 ?>
