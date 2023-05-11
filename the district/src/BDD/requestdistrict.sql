@@ -65,3 +65,10 @@ where plat.id_categorie = (select categorie.id
     select email
     from utilisateur;
 
+    SELECT count(*)
+    FROM utilisateur;
+
+    SELECT id AS 'maxid'
+    FROM utilisateur
+    ORDER BY id DESC
+    LIMIT 1;

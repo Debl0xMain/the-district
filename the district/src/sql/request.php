@@ -186,7 +186,7 @@ function creatuser () {
     $db = connexionBase();
     $requete = $db->query("
     SELECT *
-    FROM utilisateur
+    FROM utilisateur   
     ");
     $utilisateur = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
@@ -218,5 +218,41 @@ function password($email_clt) {
         endforeach;
     return $passwordbdd ;
     
+}
+
+function id_useradd () {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT id AS 'maxid'
+    FROM utilisateur
+    ORDER BY id DESC
+    LIMIT 1;
+    ");
+    $iduser = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+    foreach ($iduser as $countid):
+        $idadd = $countid->maxid;
+        endforeach;
+        $idfinal = $idadd +1;
+    return $idfinal;
+
+}
+
+
+function inscription ($name,$imail,$password,$imgupload) {
+
+    $db = connexionBase();
+
+    $requete = $db->prepare("INSERT INTO utilisateur (nom_prenom, email, password, imgprofil)
+    VALUES (:name, :imail, :password, :picture);");
+
+    $requete->bindValue(":name", $name, PDO::PARAM_STR);
+    $requete->bindValue(":imail", $imail, PDO::PARAM_STR);
+    $requete->bindValue(":password", $password, PDO::PARAM_STR); 
+    $requete->bindValue(":picture", $imgupload, PDO::PARAM_STR);
+
+    $requete->execute();
+    $requete->closeCursor();
 }
 ?>
