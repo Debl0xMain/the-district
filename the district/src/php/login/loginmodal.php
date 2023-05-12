@@ -5,16 +5,13 @@ echo
 <div class="modal-dialog">
   <div class="modal-content loginmodal">
     <div class="modal-header mx-auto">
-      <h5 class="modal-title" id="exampleModalLabel">Login | Inscription</h5>
+      <h5 class="modal-title" id="exampleModalLabel">Login<label class="switch">
+      <input type="checkbox" id="changemodal">
+      <span class="slider round"></span>
+      </label> Inscription</h5>
     </div>
         <div class="modal-body container text-center">
-    
-          <label class="switch">
-          <input type="checkbox" id="changemodal">
-          <span class="slider round"></span>
-          </label>
-          <br>
-          <br>
+
           <form action="./src/php/login/loginform.php" method="POST">
             <div class="text-center login" id="loginchange">
                 <p class="align-self-center">Email</p><i class="fa-solid fa-envelope"></i>
