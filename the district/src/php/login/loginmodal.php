@@ -4,36 +4,51 @@ echo
 <div class="modal fade2" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content loginmodal">
-    <form action="./src/php/login/loginform.php" method="POST">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-header mx-auto">
+      <h5 class="modal-title" id="exampleModalLabel">Login | Inscription</h5>
     </div>
-        <div class="modal-body container">
-            <div class="text-center">
+        <div class="modal-body container text-center">
+    
+          <label class="switch">
+          <input type="checkbox" id="changemodal">
+          <span class="slider round"></span>
+          </label>
+          <br>
+          <br>
+          <form action="./src/php/login/loginform.php" method="POST">
+            <div class="text-center login" id="loginchange">
                 <p class="align-self-center">Email</p><i class="fa-solid fa-envelope"></i>
                 <input name="mail" type="email">
                 <p class="mt-3">Password</p><i class="fa-solid fa-lock"></i>
                 <input name="password" type="password">
                 <p class="passinv"> <br> </p>
+                <button class="btn btn-outline-primary" type="submit" name="login">Login</button>
             </div>
+            </form>
+
+            <form action="../../../src/php/inscri/checkform.php" Method="POST" enctype="multipart/form-data">
+              <div class=" text-center inscription" id="inscription" hidden>
+                <p>Nom</p>
+                <input type="text" name="fristname" id="fname">
+                <p>Prenom</p>
+                <input type="text" name="surname" id="sname">
+                <p>Email</p>
+                <input type="mail" name="imail" id="imail">
+                <p>Password</p>
+                <input type="password" name="password" id="password" >
+                <p>Image de profils</p>
+                <input type="file" name="picture" id="picture">
+                <button type="submit" class="btn btn-primary">inscription</button>
+              </div>
+  
+            </form>`
         </div>
     <div class="modal-footer">
-    <button class="btn btn-outline-danger" type="submit" name="reset">Reset password</button>
-    <button class="btn btn-outline-primary" type="submit" name="login">Login</button>
+    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
     </div>
-</form>
 </div>
 </div>
-</div>'.`
-<script>
-$('#exampleModal').modal();
+</div>'
 
-function afterModalTransition(e) {
-  e.setAttribute("style", "display: none !important;");
-}
-$('#exampleModal').on('hide.bs.modal', function (e) {
-    setTimeout( () => afterModalTransition(this), 200);
-})
-</script>`
+
 ?>
