@@ -2,7 +2,7 @@
 include_once('../../sql/connect.php');
 include_once('../../sql/request.php');
 $selectpanier = 0;
-
+if (cltpaniercount()>=1) { 
 do {
 
     foreach (cltpanier($selectpanier) as $panier);
@@ -29,5 +29,7 @@ do {
     $selectpanier++;
 
 }while($selectpanier<cltpaniercount());
-
+}
 ?>
+
+
