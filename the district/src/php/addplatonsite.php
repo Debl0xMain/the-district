@@ -19,6 +19,15 @@ echo ' <div class="'.$reveal.' mychange boxsize">
                 <p class="platdesc mx-auto">'.$platclass[$selectplat]->_descplat .'</p>
                 </a>
             </div>
+
+            <div class="btnaddshop">
+                <form action="./src/php/shoping/formshopping.php" method="POST">
+                    <input hidden name="idplatform" type="text" value="'.$platclass[$selectplat]->_idplatadd.'">
+                        <button type="submit" class="btn btn-outline-light btnaddsubmit" title="Ajouté au panier">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                </form>
+            </div>
         </div>'
 
 ?>

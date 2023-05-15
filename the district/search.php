@@ -36,7 +36,10 @@ include_once("./src/php/searchbarwork.php");
 <?php
 include('./src/php/search.php')
 ?>
-
+<div>
+<?php include_once('./src/php/shoping/shopbtn.php');
+?>
+</div>
 
 
 

@@ -17,15 +17,15 @@ do {
     
     foreach (affplat($selectplat) as $plat);
 
+    $idplatadd = $plat->id;
     $libelleplat = $plat->libelle;
     $imageplat = $plat->image;
     $onoffplat = $plat->active;
     $id_categorieplat = $plat->id_categorie;
     $prixplat = $plat->prix;
     $descplat = $plat->description;
-    
 
-    $platclass[$selectplat] = new _plat($libelleplat, $imageplat, $onoffplat, $id_categorieplat, $prixplat, $descplat);
+    $platclass[$selectplat] = new _plat($idplatadd, $libelleplat, $imageplat, $onoffplat, $id_categorieplat, $prixplat, $descplat);
     
     if ($onoffplat == "Yes") {
         $platclass[$selectplat]->affplatonsite($rowplat, $selectplat, $platclass);

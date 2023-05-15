@@ -34,6 +34,10 @@ include("./src/php/searchcat.php");
 <?php
 include_once("./src/php/searchbarwork.php");
 ?>
+<div>
+<?php include_once('./src/php/shoping/shopbtn.php');
+?>
+</div>
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>
 

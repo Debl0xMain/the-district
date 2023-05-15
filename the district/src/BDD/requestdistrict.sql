@@ -72,3 +72,23 @@ where plat.id_categorie = (select categorie.id
     FROM utilisateur
     ORDER BY id DESC
     LIMIT 1;
+
+
+
+select *
+from shop
+    where iduser = 1;
+    DELETE
+    from shop
+    where iduser = 1;
+        select count(*) as maxint
+    from shop
+    where iduser = 1
+    limit 0,1;
+
+
+
+    DELETE
+    from shop
+    where iduser = 1
+    AND idcmd = 14;

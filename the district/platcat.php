@@ -37,6 +37,10 @@ $catplat = $_POST["cat"];
 include('./src/sql/request');
 include('./src/php/selectactiveplatcat.php');
 ?>
+<div>
+<?php include_once('./src/php/shoping/shopbtn.php');
+?>
+</div>
 
 
 

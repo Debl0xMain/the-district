@@ -13,7 +13,7 @@ foreach (creatuser() as $us):
     $email = $us->email;
     $password = $us->password;
     $imgprofil = $us->imgprofil;
-    $rank = "test";
+    $rank = 0;
 endforeach;
 
 $objet = new _user($name, $email, $password, $imgprofil, $rank);

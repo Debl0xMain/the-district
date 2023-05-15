@@ -35,6 +35,10 @@ include_once("./src/php/searchbarwork.php");
 <?php include('./src/php/selectcatactive.php'); ?>
 
 <?php include_once('./src/php/selectplatactive.php'); ?>
+<div>
+<?php include_once('./src/php/shoping/shopbtn.php');
+?>
+</div>
 
 <!-- Footer -->
 <?php include("./src/php/footer.php"); ?>

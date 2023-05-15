@@ -192,8 +192,8 @@ function creatuser () {
     $requete->closeCursor();
 
     return $utilisateur;
-
 }
+
 function loginemail ($email_clt) {
 
     $db = connexionBase();
@@ -255,4 +255,90 @@ function inscription ($name,$imail,$password,$imgupload) {
     $requete->execute();
     $requete->closeCursor();
 }
+
+function addpanier($idplatcmd) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    SELECT id,libelle,prix,image
+    FROM plat
+    WHERE id = $idplatcmd
+    ");
+    $platpanier = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $platpanier;
+
+}
+function addpanierbdd ($idplatcmd,$libellecmd,$imagecmd,$prixcmd,$idusercmd) {
+
+    $db = connexionBase();
+
+    $requete = $db->prepare("INSERT into shop (idplat,libelle,image,prixcmd,iduser)
+    VALUES (:idplat,:libelle,:imagecmd,:prixcmd,:idusercmd);");
+
+    $requete->bindValue(":idplat", $idplatcmd, PDO::PARAM_STR);
+    $requete->bindValue(":libelle", $libellecmd, PDO::PARAM_STR);
+    $requete->bindValue(":imagecmd", $imagecmd, PDO::PARAM_STR); 
+    $requete->bindValue(":prixcmd", $prixcmd, PDO::PARAM_STR);
+    $requete->bindValue(":idusercmd", $idusercmd, PDO::PARAM_STR);
+
+    $requete->execute();
+    $requete->closeCursor();
+
+}
+
+function cltpanier($selectpanier) {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    select *
+    from shop
+    where iduser = 1
+    LIMIT $selectpanier,1;
+    ");
+    $cltpanier = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+
+    return $cltpanier;
+
+}
+
+function cltpaniercount() {
+
+    $db = connexionBase();
+    $requete = $db->query("
+    select count(*) as maxint
+    from shop
+    where iduser = 1
+    ");
+    $tableauncountpanier = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+    foreach ($tableauncountpanier as $count):
+        $ncountpanier = $count->maxint;
+    endforeach;
+
+    return $ncountpanier;
+
+}
+
+function suppanierbdd ($idplatcmd,$userid) {
+    var_dump($idplatcmd);
+    var_dump($userid);
+    $db = connexionBase();
+
+    $requete = $db->prepare("DELETE
+    from shop
+    where iduser = :idusercmd
+    AND idcmd = :idplatcmd
+    ;");
+
+    $requete->bindValue(":idusercmd", $userid, PDO::PARAM_STR);
+    $requete->bindValue(":idplatcmd", $idplatcmd, PDO::PARAM_STR);
+
+    $requete->execute();
+    $requete->closeCursor();
+
+}
+
 ?>

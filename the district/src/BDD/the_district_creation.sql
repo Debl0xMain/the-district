@@ -12,10 +12,14 @@ CREATE TABLE `categorie` (
   `libelle` varchar(100) NOT NULL,
   `image` varchar(255) NOT NULL,
   `active` varchar(10) NOT NULL
+) ;CREATE TABLE `shop` (
+  `idcmd` int AUTO_INCREMENT PRIMARY KEY ,
+  `idplat` varchar(10) NOT NULL,
+  `libelle` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `prixcmd` decimal(10,2) NOT NULL,
+  `iduser` varchar(10) NOT NULL
 ) ;
-
-
-
 --
 -- Structure de la table `plat`
 --
@@ -79,7 +83,13 @@ VALUES ("4","District Burger","Burger composé d’un bun’s du boulanger, deux
 ("17","Tagliatelles au saumon","Découvrez notre recette délicieuse de tagliatelles au saumon frais et à la crème qui qui vous assure un véritable régal!  
 
 ","12.00","tagliatelles_saumon.webp
-","10","Yes")
+","10","Yes");
 
-
-
+CREATE TABLE `shop` (
+  `idcmd` int AUTO_INCREMENT PRIMARY KEY ,
+  `idplat` varchar(10) NOT NULL,
+  `libelle` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `prixcmd` decimal(10,2) NOT NULL,
+  `iduser` varchar(10) NOT NULL
+) ;

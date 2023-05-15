@@ -1,6 +1,7 @@
 <?php
 class _plat
 {
+    public $_idplatadd;
     public $_libelleplat;
     public $_imageplat;
     public $_onoffplat;
@@ -8,7 +9,8 @@ class _plat
     public $_prixplat;
     public $_descplat;
 
-     public function __construct ($libelleplat, $imageplat, $onoffplat, $id_categorieplat, $prixplat, $descplat) {
+     public function __construct ($idplatadd, $libelleplat, $imageplat, $onoffplat, $id_categorieplat, $prixplat, $descplat) {
+        $this->_idplatadd = $idplatadd;
         $this->_libelleplat = $libelleplat;
         $this->_imageplat = $imageplat;
         $this->_onoffplat = $onoffplat;
