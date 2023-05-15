@@ -24,21 +24,31 @@ echo
             </form>
 
             <form action="../../../src/php/inscri/checkform.php" Method="POST" enctype="multipart/form-data">
-              <div class=" text-center inscription" id="inscription" hidden>
+              <div class=" text-center inscription" id="inscription">
                 <p>Nom</p>
+                <i class="fa-solid fa-user"></i>
                 <input type="text" name="fristname" id="fname">
+                <br><br>
                 <p>Prenom</p>
+                <i class="fa-regular fa-user"></i>
                 <input type="text" name="surname" id="sname">
+                <br><br>
                 <p>Email</p>
+                <i class="fa-solid fa-envelope"></i>
                 <input type="mail" name="imail" id="imail">
+                <br><br>
                 <p>Password</p>
+                <i class="fa-solid fa-lock"></i>
                 <input type="password" name="password" id="password" >
-                <p>Image de profils</p>
+                <br><br>
+                <p>Image de profil</p>
+                <i class="fa-solid fa-camera"></i>
                 <input type="file" name="picture" id="picture">
-                <button type="submit" class="btn btn-primary">inscription</button>
+                <br><br>
+                <button type="submit" class="btn btn-outline-primary">inscription</button>
               </div>
   
-            </form>`
+            </form>
         </div>
     <div class="modal-footer">
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
