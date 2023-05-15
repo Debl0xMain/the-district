@@ -156,6 +156,9 @@
 .btnlogin {
     right: 0;
 }
+.btnshop {
+    top : 160px;
+}
 
 .btnlogin:hover .btnicon{
     border-radius: 25px 15px!important;
