@@ -25,7 +25,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-outline-primary">Paye</button>
+        <a href="../../../src/php/shoping/validcmd.php"><button type="submit" class="btn btn-outline-primary">Paye</button></a>
       </div>
     </div>
   </div>
