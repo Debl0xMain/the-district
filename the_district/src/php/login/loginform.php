@@ -29,6 +29,8 @@ endforeach;
 
 $_SESSION['user'] = $username;
 $_SESSION['iduser'] = $iduser;
+$_SESSION["email"] = $email_clt;
+$_SESSION["imgprofil"] = $imgprofil;
 
 
 header("Location:/index.php");

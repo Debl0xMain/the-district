@@ -33,5 +33,5 @@ echo
 </footer>
 <script src="./src/js/btnclick.js"></script>
 ';
-include('./inscri/form.php');
+
 ?>

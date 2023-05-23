@@ -367,7 +367,14 @@ function selectid($email_clt) {
     $requete->execute();
     $idsession = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
+
     return $idsession;
+
+
+
+
+
+
 }
 
 ?>

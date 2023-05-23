@@ -24,7 +24,6 @@ echo '<header class="container">
                 <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 </ul>
             </div>';
-            var_dump($_SESSION["user"]);
             if ($_SESSION['user'] != NULL) {
                 include('login/profile.php');
             }

@@ -1,10 +1,11 @@
 <?php
+$imgp = $_SESSION["imgprofil"];
 
 echo
 '
 <div class="position-fixed btnlogin">
 <button type="button" class="btn btn-outline-light btnprofil" data-bs-toggle="modal" data-bs-target="#profile">
-<i class="fa-sharp fa-solid fa-user-tie"></i>
+<img src="./src/img/imgprofils/'.$imgp.'.jpeg" alt="Profil" height="35px" class="rounded-circle">
 <p class="btnlogintext"> ';
 echo $_SESSION['user'];
 echo ' </p>
