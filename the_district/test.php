@@ -26,13 +26,20 @@
 <!-- header : Navbar - background - login -->
   
 <?php 
-include("./src/php/header.php"); 
+//include("./src/php/header.php"); 
 ?>
 <?php
-include("./src/php/searchcat.php"); 
+//include("./src/php/searchcat.php"); 
 ?>
 <?php
-include_once("./src/php/searchbarwork.php");
+//include_once("./src/php/searchbarwork.php");
+session_start([
+    'cookie_lifetime' => 8000,
+]);
+$_SESSION['user'] = 'username'; //$name;
+session_id();
+var_dump(session_id());
+var_dump($_SESSION);
 ?>
 <div>
 
@@ -41,10 +48,10 @@ include_once("./src/php/searchbarwork.php");
 
 
 </div>
-<?php include_once('./src/php/shoping/shopbtn.php');
+<?php //include_once('./src/php/shoping/shopbtn.php');
 ?>
 <!-- Footer -->
-<?php include("./src/php/footer.php"); ?>
+<?php //include("./src/php/footer.php"); ?>
 
 <!-- Script -->
 <script src="https://kit.fontawesome.com/3fd2d451cc.js" crossorigin="anonymous"></script>

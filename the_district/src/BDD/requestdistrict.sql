@@ -92,3 +92,8 @@ from shop
     from shop
     where iduser = 1
     AND idcmd = 14;
+
+
+    SELECT *
+    FROM utilisateur
+    WHERE email = 'admin@admin.fr';

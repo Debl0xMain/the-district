@@ -1,0 +1,11 @@
+<?php
+session_start();
+var_dump($_SESSION["user"]);
+var_dump($_SESSION["iduser"]);
+unset($_SESSION["user"]);
+unset($_SESSION["iduser"]);
+var_dump($_SESSION["user"]);
+var_dump($_SESSION["iduser"]);
+header("Location:/index.php");
+exit;
+?>

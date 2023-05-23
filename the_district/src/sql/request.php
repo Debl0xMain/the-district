@@ -356,4 +356,18 @@ function cmdvld ($userid) {
 
 }
 
+function selectid($email_clt) {
+
+    $db = connexionBase();
+    $requete = $db->prepare("SELECT *
+    FROM utilisateur
+    WHERE email = :email_clt
+    ;");
+    $requete->bindValue(":email_clt", $email_clt, PDO::PARAM_STR);
+    $requete->execute();
+    $idsession = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
+    return $idsession;
+}
+
 ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo '<header class="container">
     <nav class="navbar navbar-expand-sm justify-content-center fixed-top bg-nav">
         <div class="">
@@ -23,10 +24,11 @@ echo '<header class="container">
                 <img class="navlogo" src="/src/img/logo/logo.png" alt="Logo The District">
                 </ul>
             </div>';
-            //if (session start = on) {include('login/profile.php');}
-            //if (session start = off) {include('login/loginbtn.php');}
-            include('login/loginbtn.php');
-            //include('login/profile.php');
+            var_dump($_SESSION["user"]);
+            if ($_SESSION['user'] != NULL) {
+                include('login/profile.php');
+            }
+            else (include('login/loginbtn.php'));
             echo
                 '
         </div>

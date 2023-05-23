@@ -19,4 +19,20 @@ endforeach;
 $objet = new _user($name, $email, $password, $imgprofil, $rank);
 $objet->checklogin($email_clt,$password_clt);
 
+
+session_start();
+
+foreach (selectid($email_clt) as $uslog):
+    $username = $uslog->nom_prenom;
+    $iduser = $uslog->id;
+endforeach;
+
+$_SESSION['user'] = $username;
+$_SESSION['iduser'] = $iduser;
+
+
+header("Location:/index.php");
+exit;
+
+
 ?>
