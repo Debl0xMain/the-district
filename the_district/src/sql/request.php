@@ -288,13 +288,13 @@ function addpanierbdd ($idplatcmd,$libellecmd,$imagecmd,$prixcmd,$idusercmd) {
 
 }
 
-function cltpanier($selectpanier) {
+function cltpanier($selectpanier,$userid) {
 
     $db = connexionBase();
     $requete = $db->query("
     select *
     from shop
-    where iduser = 1
+    where iduser = $userid
     LIMIT $selectpanier,1;
     ");
     $cltpanier = $requete->fetchAll(PDO::FETCH_OBJ);
@@ -304,13 +304,13 @@ function cltpanier($selectpanier) {
 
 }
 
-function cltpaniercount() {
+function cltpaniercount($idsesionid) {
 
     $db = connexionBase();
     $requete = $db->query("
     select count(*) as maxint
     from shop
-    where iduser = 1
+    where iduser = $idsesionid
     ");
     $tableauncountpanier = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
@@ -369,11 +369,6 @@ function selectid($email_clt) {
     $requete->closeCursor();
 
     return $idsession;
-
-
-
-
-
 
 }
 

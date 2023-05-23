@@ -1,11 +1,21 @@
 <?php
 $imgp = $_SESSION["imgprofil"];
 
+if (file_exists('src/img/imgprofils/'.$imgp.'.jpeg')== true) {
+    $imgp = $_SESSION["imgprofil"];
+    $profil = $imgp.".jpeg";
+    $profillink = "./src/img/imgprofils/$profil";
+    $profilaff = '<img src="./src/img/imgprofils/'.$profil.'" alt="Profil" height="35px" class="rounded-circle">';
+}
+else {
+    $profilaff  = '<i class="fa-solid fa-user"></i>';
+}
+
 echo
 '
 <div class="position-fixed btnlogin">
 <button type="button" class="btn btn-outline-light btnprofil" data-bs-toggle="modal" data-bs-target="#profile">
-<img src="./src/img/imgprofils/'.$imgp.'.jpeg" alt="Profil" height="35px" class="rounded-circle">
+'.$profilaff.'
 <p class="btnlogintext"> ';
 echo $_SESSION['user'];
 echo ' </p>

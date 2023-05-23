@@ -1,7 +1,13 @@
 <?php
 include_once('../../sql/connect.php');
 include_once('../../sql/request.php');
-
+session_start();
+ if ($_SESSION['user'] != NULL) {
+    $idusercmd = $_SESSION['iduser'];
+ }
+ else {
+    $idusercmd  = 999;
+ }
 
 $idplatcmd = $_POST["idplatform"];
 
@@ -10,7 +16,7 @@ $libellecmd = $cmdshop->libelle;
 $imagecmd = $cmdshop->image;
 $prixcmd = $cmdshop->prix;
 
-$idusercmd = 1;
+
 
 addpanierbdd($idplatcmd,$libellecmd,$imagecmd,$prixcmd,$idusercmd);
 header("Location:/plats.php");

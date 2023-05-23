@@ -2,10 +2,22 @@
 include_once('../../sql/connect.php');
 include_once('../../sql/request.php');
 $selectpanier = 0;
-if (cltpaniercount()>=1) { 
+session_start();
+if ($_SESSION['user'] != NULL) {
+
+    $userid = $_SESSION['iduser'];
+    $idsesionid = $_SESSION['iduser'];
+ }
+ else {
+    $userid = 999;
+    $idsesionid = 999;
+ }
+
+
+if (cltpaniercount($idsesionid)>=1) { 
 do {
 
-    foreach (cltpanier($selectpanier) as $panier);
+    foreach (cltpanier($selectpanier,$userid) as $panier);
     
     $idcmdbdd = $panier->idcmd;
     $idplatcmd = $panier->idplat;
@@ -28,7 +40,7 @@ do {
     </div>';
     $selectpanier++;
 
-}while($selectpanier<cltpaniercount());
+}while($selectpanier<cltpaniercount( $idsesionid));
 }
 ?>
 

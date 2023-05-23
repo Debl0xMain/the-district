@@ -1,7 +1,18 @@
 <?php
 include_once('../../../src/sql/connect.php');
 include_once('../../../src/sql/request.php');
-$userid = 1;
+
+
+session_start();
+if ($_SESSION['user'] != NULL) {
+
+    $userid = $_SESSION['iduser'];
+
+ }
+ else {
+    $userid = 999;
+ }
+
 $arr = [];
 
 
@@ -11,7 +22,7 @@ $selectpanier = 0;
 
 do {
 
-    foreach (cltpanier($selectpanier) as $panier);
+    foreach (cltpanier($selectpanier,$userid) as $panier);
     
     $prixcmd = $panier->prixcmd;
 
@@ -19,7 +30,7 @@ do {
 
     $selectpanier++;
 
-}while($selectpanier<cltpaniercount()); 
+}while($selectpanier<cltpaniercount($userid)); 
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -44,8 +55,7 @@ $mail->Port       = 1025;
 $mail->setFrom('from@thedistrict.com', 'The District Company');
 
 // Destinataire(s) - adresse et nom (facultatif)
-$mail->addAddress("client1@example.com", "Mr Client1");
-$mail->addAddress("client2@example.com"); 
+$mail->addAddress($_SESSION['email'], $_SESSION['user']);
 
 //Adresse de reply (facultatif)
 $mail->addReplyTo("reply@thedistrict.com", "Reply");
@@ -66,9 +76,10 @@ $mail->Subject = 'Panier';
 $prixpaye = 'Vous avez paye ' .array_sum($arr). ' euro <br />';
 $cmddetail = 'Votre commande : <br>';
 $selectpanier = 0;
+$idsesionid = $userid;
 do {
 
-    foreach (cltpanier($selectpanier) as $panier);
+    foreach (cltpanier($selectpanier,$userid) as $panier);
     
     $idcmdbdd = $panier->idcmd;
     $idplatcmd = $panier->idplat;
@@ -80,7 +91,7 @@ do {
     $cmddetailprint[] = $libellecmd.'  '. $prixcmd .' euro <br>';
     $selectpanier++;
 
-}while($selectpanier<cltpaniercount());
+}while($selectpanier<cltpaniercount($idsesionid));
 
 $mail->Body = $prixpaye .$cmddetail. implode(" ", $cmddetailprint) ;
 
