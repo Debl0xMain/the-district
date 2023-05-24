@@ -55,7 +55,12 @@ $mail->Port       = 1025;
 $mail->setFrom('from@thedistrict.com', 'The District Company');
 
 // Destinataire(s) - adresse et nom (facultatif)
-$mail->addAddress($_SESSION['email'], $_SESSION['user']);
+if ($_SESSION["email"] != NULL) {
+    $mail->addAddress($_SESSION['email'], $_SESSION['user']);
+}
+else {
+    $mail->addAddress("test@email.com", "visiteur");
+}
 
 //Adresse de reply (facultatif)
 $mail->addReplyTo("reply@thedistrict.com", "Reply");
@@ -73,11 +78,13 @@ $mail->Subject = 'Panier';
 
 // Corps du message
 //send mail
-$prixpaye = 'Vous avez paye ' .array_sum($arr). ' euro <br />';
+$today = date("j, n, Y");
+$prixpaye = '<br /> Vous avez paye ' .array_sum($arr). ' euro <br />';
 $cmddetail = 'Votre commande : <br>';
 $selectpanier = 0;
 $idsesionid = $userid;
 do {
+
 
     foreach (cltpanier($selectpanier,$userid) as $panier);
     
@@ -93,7 +100,7 @@ do {
 
 }while($selectpanier<cltpaniercount($idsesionid));
 
-$mail->Body = $prixpaye .$cmddetail. implode(" ", $cmddetailprint) ;
+$mail->Body = $today . $prixpaye .$cmddetail. implode(" ", $cmddetailprint) ;
 
 
 // On envoie le mail dans un block try/catch pour capturer les éventuelles erreurs
